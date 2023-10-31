@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-'''Contains the places_amenities view for the API.'''
+'''places_amenities view for the API.'''
 from flask import jsonify, request
 from werkzeug.exceptions import NotFound, MethodNotAllowed
-
 from api.v1.views import app_views
 from models import storage, storage_t
 from models.amenity import Amenity
 from models.place import Place
-
 
 @app_views.route('/places/<place_id>/amenities', methods=['GET'])
 @app_views.route(

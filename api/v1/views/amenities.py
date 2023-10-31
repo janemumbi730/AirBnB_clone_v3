@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-'''Contains the amenities view for the API.'''
+'''amenities view for the APi'''
 from flask import jsonify, request
 from werkzeug.exceptions import NotFound, MethodNotAllowed, BadRequest
-
 from api.v1.views import app_views
 from models import storage
 from models.amenity import Amenity
 
-
 ALLOWED_METHODS = ['GET', 'DELETE', 'POST', 'PUT']
 '''Methods allowed for the amenities endpoint.'''
-
 
 @app_views.route('/amenities', methods=ALLOWED_METHODS)
 @app_views.route('/amenities/<amenity_id>', methods=ALLOWED_METHODS)
@@ -40,7 +37,6 @@ def get_amenities(amenity_id=None):
         raise NotFound()
     all_amenities = list(map(lambda x: x.to_dict(), all_amenities))
     return jsonify(all_amenities)
-
 
 def remove_amenity(amenity_id=None):
     '''Removes a amenity with the given id.

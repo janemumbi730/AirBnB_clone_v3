@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-'''Contains the blueprint for the API.'''
+'''blueprint for the API.'''
 from flask import Blueprint
 
-
 app_views = Blueprint('app_views', __name__, url_prefix='/api/v1')
-'''The blueprint for the AirBnB clone API.'''
-
+'''The blueprint'''
 
 from api.v1.views.amenities import *
 from api.v1.views.cities import *

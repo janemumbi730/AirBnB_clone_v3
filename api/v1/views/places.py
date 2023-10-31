@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-'''Contains the places view for the API.'''
+'''places view for the API.'''
 from flask import jsonify, request
 from werkzeug.exceptions import NotFound, MethodNotAllowed, BadRequest
-
 from api.v1.views import app_views
 from models import storage, storage_t
 from models.amenity import Amenity

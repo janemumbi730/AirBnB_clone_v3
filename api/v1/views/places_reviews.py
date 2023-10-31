@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-'''Contains the places_reviews view for the API.'''
+'''places_reviews view for the API.'''
 from flask import jsonify, request
 from werkzeug.exceptions import NotFound, MethodNotAllowed, BadRequest
-
 from api.v1.views import app_views
 from models import storage
 from models.place import Place
 from models.review import Review
 from models.user import User
-
 
 @app_views.route('/places/<place_id>/reviews', methods=['GET', 'POST'])
 @app_views.route('/reviews/<review_id>', methods=['GET', 'DELETE', 'PUT'])

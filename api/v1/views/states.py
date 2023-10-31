@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-'''Contains the states view for the API.'''
+'''states view for the API.'''
 from flask import jsonify, request
 from werkzeug.exceptions import NotFound, MethodNotAllowed, BadRequest
-
 from api.v1.views import app_views
 from models import storage
 from models.state import State
 
-
 ALLOWED_METHODS = ['GET', 'DELETE', 'POST', 'PUT']
 '''Methods allowed for the states endpoint.'''
-
 
 @app_views.route('/states', methods=ALLOWED_METHODS)
 @app_views.route('/states/<state_id>', methods=ALLOWED_METHODS)

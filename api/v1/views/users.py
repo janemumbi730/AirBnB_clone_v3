@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-'''Contains the users view for the API.'''
+'''view for the API.'''
 from flask import jsonify, request
 from werkzeug.exceptions import NotFound, BadRequest
-
 from api.v1.views import app_views
 from models import storage
 from models.user import User
-
 
 @app_views.route('/users', methods=['GET'])
 @app_views.route('/users/<user_id>', methods=['GET'])
